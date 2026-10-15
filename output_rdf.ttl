@@ -1,0 +1,107 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ex: <http://example.org/monte-cristo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ns1: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix ns2: <http://www.sealitproject.eu/ontology/> .
+@prefix ns3: <http://iflastandards.info/ns/fr/frbr/frbroo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema1: <http://schema.org/> .
+
+ex:dumas a foaf:Person ;
+    ex:role "author" ;
+    dcterms:creator ex:novel ;
+    schema1:birthDate "1802-07-24" ;
+    schema1:deathDate "1870-12-05" ;
+    owl:sameAs <http://viaf.org/viaf/51688902> ;
+    foaf:name "Alexandre Dumas" .
+
+ex:journal-des-debats a dcterms:BibliographicResource ;
+    dcterms:date "28 August 1844 – 15 January 1846" ;
+    dcterms:publisher ex:novel ;
+    dcterms:title "Journal des Débats" ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q2565164> .
+
+ex:peuchet a foaf:Person ;
+    dcterms:creator ex:le-diamant-et-la-vangeance ;
+    schema1:birthDate "1758-03-06" ;
+    schema1:deathDate "1830-09-28" ;
+    owl:sameAs <http://viaf.org/viaf/64103486> ;
+    foaf:name "Jacques Peuchet" .
+
+ex:theCountOfMonteCristoWiki a dcterms:BibliographicResource ;
+    dcterms:title "The Count of Monte Cristo" .
+
+ex:treasure a <http://wikidata.org/prop/direct/Q15706911> ;
+    ex:objectType "fictional" ;
+    schema1:name "Treasure of Spada" ;
+    crm:P29_custodyReceivedBy ex:dantes ;
+    prov:atLocation ex:island-of-mc .
+
+ex:chateau-d-if a crm:E53_Place ;
+    schema1:name "Chateau d'If" ;
+    owl:sameAs <https://www.geonames.org/3012909/chateau-d-if.html> .
+
+ex:manuscript a <http://wikidata.org/prop/direct/Q15306849> ;
+    ex:objectType "fictional" ;
+    schema1:name "Abbé Faria's manuscript" ;
+    crm:P29_custodyReceivedBy ex:dantes .
+
+ex:maquet a foaf:Person ;
+    ex:role "collaborator" ;
+    schema1:birthDate "1813-09-13" ;
+    schema1:deathDate "1888-01-08" ;
+    owl:sameAs <http://viaf.org/viaf/62618234> ;
+    foaf:name "Auguste Maquet" .
+
+ex:picaud a foaf:Person ;
+    schema1:birthDate "1780-05-02" ;
+    schema1:deathDate "1815" ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q3386610> ;
+    foaf:name "Pierre Picaud" .
+
+ex:ship a ns2:ship ;
+    ex:objectType "fictional" ;
+    schema1:location ex:marseille ;
+    schema1:name "Le Pharaon" .
+
+ex:faria a ns3:F38_Character,
+        foaf:Person ;
+    dcterms:creator ex:manuscript ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q140183428> ;
+    foaf:name "Abbé Faria" .
+
+ex:island-of-mc a crm:E53_Place ;
+    schema1:name "Island of Monte Cristo" ;
+    owl:sameAs <https://www.geonames.org/3172959/isola-di-montecristo.html> .
+
+ex:le-diamant-et-la-vangeance a dcterms:BibliographicResource ;
+    ns1:subjectOf ex:picaud ;
+    dcterms:date "1838" ;
+    dcterms:title "Le Diamant et la Vengeance" ;
+    owl:sameAs <https://catalogue.bnf.fr/ark:/12148/cb36370984h> .
+
+ex:marseille a crm:E53_Place ;
+    schema1:name "Marseille" ;
+    owl:sameAs <https://www.geonames.org/2995469/marseille.html> .
+
+ex:novel a ns3:F1_Work,
+        dcterms:BibliographicResource ;
+    ns3:R58_hasFictionalMemeber ex:dantes,
+        ex:faria ;
+    dcterms:contributor ex:maquet ;
+    dcterms:spatial ex:chateau-d-if,
+        ex:marseille ;
+    dcterms:title "Le Comte de Monte-Cristo" ;
+    schema1:about ex:island-of-mc ;
+    owl:sameAs <http://viaf.org/viaf/177357373> ;
+    prov:wasInfluencedBy ex:le-diamant-et-la-vangeance .
+
+ex:dantes a ns3:F38_Character,
+        foaf:Person ;
+    ns2:worksAt ex:ship ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q1952877> ;
+    foaf:knows ex:faria ;
+    foaf:name "Edmond Dantès" .
+
