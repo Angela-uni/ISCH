@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+/* 1. Applicazione del font Julius Sans One a tutto il testo */
+body, p, li, span, a, button, .card-text, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Julius Sans One', sans-serif !important;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+}
+
+body.bg-light {
+    background-color: #8b0000 !important;
+}
+
+/* 2. Titoli armonizzati con i colori del tema (sovrascrive Bootstrap text-primary e text-secondary) */
+main h2, main h2.text-primary, h5.text-primary {
+    color: #0f172a !important; /* Blu notte per i titoli principali h2 */
+    border-bottom-color: #c5a059 !important; /* Riga sotto in oro/bronzo */
+}
+
+main h3, main h3.text-secondary, main h4, main h5 {
+    color: #8b0000 !important; /* Rosso bordeaux per i sottotitoli */
+}
+
+/* 3. Modifica dei link nel testo (Rosso bordeaux, più grandi, senza sottolineatura) */
+main a {
+    color: #8b0000 !important; 
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease-in-out;
+}
+
+main a:hover {
+    color: #0f172a !important; /* Blu notte in hover */
+    text-decoration: none !important;
+}
+
+/* 4. Personalizzazione della Navbar */
+.navbar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    border-bottom: 2px solid #c5a059;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #d9bc74 !important;
+}
+
+/* 5. Header / Hero Section */
+header.header-hero {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 41, 59, 0.88) 100%), 
+                url('../imgs/isle_MC.jpg') center/cover no-repeat !important;
+    border-bottom: 4px solid #c5a059;
+    min-height: 95vh;
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    color: #f8fafc !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Definizione dell'animazione di comparsa */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Parte leggermente più in basso per un effetto più elegante */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Applicazione dell'animazione agli elementi dell'header */
+.fade-in-content {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+.scroll-down-arrow {
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+.scroll-down-arrow:hover {
+    color: #c5a059 !important; /* Si colora dell'oro del tema al passaggio del mouse */
+}
+
+/* 6. Stile delle Card armonizzato */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top: 3px solid #c5a059 !important; /* Bordo superiore oro */
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.08) !important;
+    border-top-color: #8b0000 !important; /* Bordo bordeaux al passaggio del mouse */
+}
+
+/* 7. Armonizzazione di TUTTI i bottoni */
+.btn-outline-primary, .btn-primary, .btn-outline-secondary {
+    color: #0f172a !important;
+    border-color: #c5a059 !important;
+    background-color: transparent !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-primary:hover, .btn-primary:hover, .btn-outline-secondary:hover {
+    background-color: #0f172a !important;
+    border-color: #0f172a !important;
+    color: #d9bc74 !important; /* Testo oro al passaggio del mouse */
+}
+
+/* Bottoni speciali scuri (come quello del file TEI) */
+.btn-outline-dark {
+    border-color: #0f172a !important;
+    color: #0f172a !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: #8b0000 !important;
+    border-color: #8b0000 !important;
+    color: #ffffff !important;
+}
+
+/* 8. Footer */
+footer.bg-dark {
+    background-color: #0f172a !important;
+    border-top: 2px solid #c5a059;
+}

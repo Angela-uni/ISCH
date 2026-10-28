@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+        <script src="js/main.js" defer></script>
+        <title>MonteCristo</title>
+    </head>
+    <body class="bg-light" data-bs-spy="scroll" data-bs-target="#navbar-spy" data-bs-smooth-scroll="true">
+        <!-- Navbar -->
+        <nav id="navbar-spy" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">MonteCristo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#introduction">Study of the domain</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#knowledge-organization">Knowledge Organization</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#knowledge-representation">Knowledge Representation</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="py-5 text-white text-center position-relative overflow-hidden shadow header-hero">
+            <div class="container py-5 position-relative z-1 fade-in-content">
+                <h1 class="display-3 fw-bold mb-3">MonteCristo</h1>
+                <p class="lead col-lg-8 mx-auto mb-0 text-white-50">
+                    A Linked Open Data project to discover connections and relationships based on <i>The Count of Monte Cristo</i> by Alexandre Dumas.
+                </p>
+            </div>
+
+            <div class="position-absolute bottom-0 start-50 translate-middle-x pb-3 fade-in-content">
+                <a href="#introduction" class="text-white text-decoration-none scroll-down-arrow" title="Explore the project">
+                    <i class="bi bi-chevron-down fs-2"></i>
+                </a>
+            </div>
+        </header>
+        <main class="container my-5">
+            <section class="mb-5 p-4 bg-white rounded shadow-sm">
+                <h2 id="introduction" class="border-bottom pb-2 mb-4 text-primary" style="scroll-margin-top: 90px;">Study of the domain</h2>
+                <div class="mb-4">                
+                    <h3 class="h4 text-secondary">Idea</h3>
+                    <p class="text-muted">
+                        <a href="index.html" title="Homepage">MonteCristo</a> investigates, among the others, what kind of relations can be discovered inside the content of the novel itself, the context around its publication and the connections with real people and places.
+                        Since the goal is to create a Linked Open Data project, it provides a structured dataset, that would be semantically correct, thanks to the knowledge organization and knowledge representation process.<br>
+                        The starting point of <a href="index.html" title="Homepage">MonteCristo</a> is the <a href="#">Wikipedia page</a> dedicated to the novel (<a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo" title="Wikipedia" target="_blank">The Count of Monte Cristo</a>):
+                        fifteen entities (including the book itself) have been chosen within the Wikipedia page as the most representative for our purpose.
+                    </p>
+                </div>
+                
+                <div id="entities">
+                    <h3 class="h4 text-secondary mb-3">Entities</h3>
+                    <p class="text-muted">
+                        The entities are divided into five categories, recalled by the badges above them: real persons, fictional characters, objects, bibliographic resources, and places.
+                        Apart from the objects, all the entities are coupled with their own Authority source.
+                        For the real persons it is <a href="https://viaf.org/en" target="_blank" title="VIAF">VIAF</a>;
+                        for the fictional characters it is <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank" title="Wikidata">Wikidata</a>;
+                        for the bibliographic resources they are the <a href="https://catalogue.bnf.fr/index.do" target="_blank" title="National Library of France">National Library of France</a> and <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank" title="Wikidata">Wikidata</a>;
+                        for the places it is <a href="https://www.geonames.org" target="_blank" title="Geonames">Geonames</a>.
+                        Since the objects are fictional, there is no correspondence on an authoritative catalogue. For this reason, the space that is dedicated to the link in the other entities is intentionally left blank.
+                    </p>
+
+                    <!-- Persons (Real) -->
+                    <div class="mt-4">
+                        <h4 class="h5 text-dark border-bottom pb-2">Persons (Real)</h4>
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-1">
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">Person</span>
+                                        <h5 class="card-title m-0 fw-bold">Alexandre Dumas</h5>
+                                        <p class="card-text small text-muted mt-2">Author of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="http://viaf.org/viaf/51688902" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">Person</span>
+                                        <h5 class="card-title m-0 fw-bold">Auguste Maquet</h5>
+                                        <p class="card-text small text-muted mt-2">Collaborator of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="http://viaf.org/viaf/62618234" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">Person</span>
+                                        <h5 class="card-title m-0 fw-bold">Jacques Peuchet</h5>
+                                        <p class="card-text small text-muted mt-2">Author of <i>Le Diamant et la Vengeance</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="http://viaf.org/viaf/64103486" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-primary mb-2">Person</span>
+                                        <h5 class="card-title m-0 fw-bold">Pierre Picaud</h5>
+                                        <p class="card-text small text-muted mt-2">Protagonist of <i>Le Diamant et la Vengeance</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://www.wikidata.org/wiki/Q3386610" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fictional Characters -->
+                    <div class="mt-4">
+                        <h4 class="h5 text-dark border-bottom pb-2">Fictional Characters</h4>
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-1">                    
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-info text-dark mb-2">Fictional Character</span>
+                                        <h5 class="card-title m-0 fw-bold">Edmond Dantès</h5>
+                                        <p class="card-text small text-muted mt-2">Protagonist of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://www.wikidata.org/wiki/Q1952877" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-info text-dark mb-2">Fictional Character</span>
+                                        <h5 class="card-title m-0 fw-bold">Abbé Faria</h5>
+                                        <p class="card-text small text-muted mt-2">Character of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://www.wikidata.org/wiki/Q140183428" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+
+                    <!-- Objects -->
+                    <div class="mt-4">
+                        <h4 class="h5 text-dark border-bottom pb-2">Objects</h4>
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-1">
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-warning text-dark mb-2">Object</span>
+                                        <h5 class="card-title m-0 fw-bold">Le Pharaon</h5>
+                                        <p class="card-text small text-muted mt-2">Object of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-warning text-dark mb-2">Object</span>
+                                        <h5 class="card-title m-0 fw-bold">Treasure of Spada</h5>
+                                        <p class="card-text small text-muted mt-2">Object of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-warning text-dark mb-2">Object</span>
+                                        <h5 class="card-title m-0 fw-bold">Abbé Faria's manuscript</h5>
+                                        <p class="card-text small text-muted mt-2">Object of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bibliographic Entities -->
+                    <div class="mt-4">
+                        <h4 class="h5 text-dark border-bottom pb-2">Bibliographic Entities</h4>
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-1">
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-secondary mb-2">Bibliographic Entity</span>
+                                        <h5 class="card-title m-0 fw-bold">The Count of Monte Cristo</h5>
+                                        <p class="card-text small text-muted mt-2">Novel written by Alexandre Dumas</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="http://viaf.org/viaf/177357373" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-secondary mb-2">Bibliographic Entity</span>
+                                        <h5 class="card-title m-0 fw-bold">Le Diamant et la Vengeance</h5>
+                                        <p class="card-text small text-muted mt-2">Inspiration for <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://catalogue.bnf.fr/ark:/12148/cb36370984h" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-secondary mb-2">Bibliographic Entity</span>
+                                        <h5 class="card-title m-0 fw-bold">Journal des Débats</h5>
+                                        <p class="card-text small text-muted mt-2">Publisher of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://www.wikidata.org/wiki/Q2565164" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Places -->
+                    <div class="mt-4">
+                        <h4 class="h5 text-dark border-bottom pb-2">Places</h4>
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-1">
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-success mb-2">Place</span>
+                                        <h5 class="card-title m-0 fw-bold">Château d'If</h5>
+                                        <p class="card-text small text-muted mt-2">Place of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://www.geonames.org/3012909/chateau-d-if.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-success mb-2">Place</span>
+                                        <h5 class="card-title m-0 fw-bold">Marseille</h5>
+                                        <p class="card-text small text-muted mt-2">Place of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://www.geonames.org/2995469/marseille.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100 shadow-sm border-0 bg-light">
+                                    <div class="card-body">
+                                        <span class="badge bg-success mb-2">Place</span>
+                                        <h5 class="card-title m-0 fw-bold">Island of Monte Cristo</h5>
+                                        <p class="card-text small text-muted mt-2">Place of <i>The Count of Monte Cristo</i></p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                        <a href="https://www.geonames.org/3172959/isola-di-montecristo.html" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">View Authority source</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </section>
+
+            <!-- Knowledge Organization -->
+            <section class="mb-5 p-4 bg-white rounded shadow-sm">
+                <h2 id="knowledge-organization" class="border-bottom pb-2 mb-4 text-primary" style="scroll-margin-top: 90px;">Knowledge Organization</h2>
+                
+                <div class="mb-5">
+                    <h3 class="h4 text-secondary">Theoretical Model</h3>
+                    <p class="text-muted">
+                        The next step was to create a model in natural language, for a schematic representation of what unites the selected entities, including also the authority sources.
+                        However, the theoretical model does not include any ontology terms, RDF properties or technicisms yet: the purpose of this is to offer a rudimentary visual explanation of the complex connections that will be defined later in a more sophisticated way.<br>
+                        Even at a first glance, three identifying colors can be noted in the graph: yellow for the entities, light blue for the type of the entities, violet for the authority source link. The model has been implemented with yEd Graph Editor and its layout was done automatically in hierarchy.
+                    </p>
+                    <div class="d-flex justify-content-end mb-2">
+                        <div class="btn-group" role="group" aria-label="Graph zoom controls">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="theoretical-zoom-in" title="Zoom In">
+                                <i class="bi bi-zoom-in"></i> +
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="theoretical-zoom-out" title="Zoom Out">
+                                <i class="bi bi-zoom-out"></i> -
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="theoretical-zoom-reset" title="Reset View">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                    <div class="border rounded bg-light overflow-hidden shadow-sm" style="width: 100%; height: 500px;">
+                        <embed id="theoretical-svg" type="image/svg+xml" src="imgs/theoretical_model.svg" style="width: 100%; height: 100%;" />
+                    </div>
+                </div>
+                <div>
+                    <h3 class="h4 text-secondary">Conceptual Model</h3>
+                    <p class="text-muted">
+                        After the theoretical model, it was time to finally develop a conceptual model using existing ontologies. This is necessary to formalize the theoretical model represented above.
+                        Once again, the graph was implemented with yEd Graph Editor, supported by the <a href="https://essepuntato.it/graffoo/specification/" target="_blank" title="Graffoo - Specification">Graffoo</a> palette by S. Peroni.<br>
+                        The ontologies used are:
+                    </p>
+                    <ul class="text-muted">
+                        <li><a href="https://xmlns.com/foaf/spec/" target="_blank" title="FOAF">Friend of a Friend (FOAF)</a>: it describes persons, their activities and relations to objects.<br>Classes: <code>Person</code>, <code>Agent</code><br>Property: <code>knows</code></li>
+                        <li><a href="https://www.ifla.org/wp-content/uploads/2019/05/assets/cataloguing/FRBRoo/frbroo_v_2.4.pdf" target="_blank" title="FRBRoo">FRBR object oriented (FRBRoo)</a>: it captures and represents the underlying semantics of bibliographic information.<br>Classes: <code>F1_Work</code>, <code>F38_Character</code><br>Property: <code>R58_hasFictionalMember</code></li>
+                        <li><a href="https://cidoc-crm.org" target="_blank" title="CIDOC CRM">CIDOC Conceptual Reference Model (CIDOC-CRM)</a>: it provides a formal structure for implicit and explicit concepts and relationships in cultural heritage domain.<br>Classes: <code>E28_ConceptualObject</code>, <code>E53_Place</code><br>Property: <code>P29_custodyReceivedBy</code></li>
+                        <li><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" title="DCterms">Dublin Core Terms (DCTerms)</a>: starting from the Dublin Core Metadata Element Set, it adds properties and classes for describing many heritage and archival concepts.<br>Class: <code>BibliographicResource</code><br>Properties: <code>contributor</code>, <code>creator</code>, <code>publisher</code>, <code>spatial</code></li>
+                        <li><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank" title="Wikidata">Wikidata</a>: a free, open, multilingual, and collaborative knowledge base that stores structured data for humans and machines.<br>Classes: <code>Q15306849</code> (fictional creative work), <code>Q15706911</code> (fictional object)</li>
+                        <li><a href="https://dl.acm.org/doi/10.1145/3586080" target="_blank" title="SeaLit Ontology">SeaLit Ontology</a>: an ontology for a formal structure of the ships in literary works, including places, voyage concepts and employments.<br>Class: <code>Ship</code><br>Property: <code>worksAt</code></li>
+                        <li><a href="https://schema.org" target="_blank" title="Schema.org">Schema.org</a>: it is advocated by the major search engines on the Internet and it covers about anything.<br>Class: <code>CreativeWork</code><br>Properties: <code>about</code>, <code>location</code></li>
+                        <li><a href="https://www.w3.org/TR/prov-o/" target="_blank" title="PROV">PROV Ontology (PROV-O)</a>: it represents and interchanges provenance information.<br>Properties: <code>atLocation</code>, <code>wasInfluencedBy</code></li>
+                        <li><a href="https://id.loc.gov/ontologies/bibframe.html" target="_blank" title="BibFrame">BibFrame</a>: useful for describing the context around a literary work.<br>Property: <code>subjectOf</code></li>
+                        <li><a href="https://www.w3.org/TR/rdf11-schema/" target="_blank" title="RDFs">RDF Schema</a>: a data-modelling vocabulary for RDF data. It describes groups of related resources and the relationships between these resources.<br>Class: <code>Resource</code><br>Property: <code>subClassOf</code></li>
+                        <li><a href="https://www.w3.org/TR/owl-overview/" target="_blank" title="OWL">Ontology Web Language (OWL)</a>: a standard endorsed by the W3C Semantic Web Standards. It defines and shares machine-interpretable domain ontologies.<br>Property: <code>sameAs</code></li>
+                    </ul>
+                    <div class="d-flex justify-content-end mb-2">
+                        <div class="btn-group" role="group" aria-label="Graph zoom controls">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="conceptual-zoom-in" title="Zoom In">
+                                <i class="bi bi-zoom-in"></i> +
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="conceptual-zoom-out" title="Zoom Out">
+                                <i class="bi bi-zoom-out"></i> -
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="conceptual-zoom-reset" title="Reset View">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                    <div class="border rounded bg-light overflow-hidden shadow-sm" style="width: 100%; height: 500px;">
+                        <embed id="conceptual-svg" type="image/svg+xml" src="imgs/conceptual_model.svg" style="width: 100%; height: 100%;" />
+                    </div>
+                </div> 
+            </section>
+
+            <!-- Knowledge Representation -->
+            <section class="mb-5 p-4 bg-white rounded shadow-sm">
+                <h2 id="knowledge-representation" class="border-bottom pb-2 mb-4 text-primary" style="scroll-margin-top: 90px;">Knowledge Representation</h2>
+                
+                <div class="mb-5">
+                    <h3 class="h4 text-secondary">XML/TEI</h3>
+                    <p class="text-muted">
+                        To continue with the Knowledge Representation tasks within the project, an XML/TEI file was created based on <a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo" title="Wikipedia" target="_blank">"The Count of Monte Cristo" Wikipedia page</a>, already used as the source for the entities.<br>
+                        There are sampled the following sections: <a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo#" target="_blank" title="Introduction">Introduction</a>, <a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo#Plot" target="_blank" title="Plot">Plot</a>,
+                        <a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo#Background_to_elements_of_the_plot" target="_blank" title="Background to elements of the plot">Background to elements of the plot</a>, <a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo#Publication" target="_blank" title="Publication">Publication</a> (just the introduction),
+                        and <a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo#Historical_background" target="_blank" title="Historical background">Historical background</a>.<br>
+                        Since the other sections do not mention the chosen entities and they would have unnecessarily lengthened the discussion, it was decided not to encode them. These omissions are well-defined within the <code>gap reason="sampling"</code> element, declared in the editorial declaration.
+                    </p>
+                    <p class="text-muted">
+                        The fifteen entities are linked to their authority sources through the <code>@sameAs</code> attribute. For the same reason mentioned above, the fictional objects do not have authority sources.<br>
+                        All the semantic relations are recorded in a specific <code>&lt;listRelation&gt;</code>. Each relation has three attributes: <code>@name</code>, the predicate; <code>@active</code>, the subject; and <code>@passive</code>, the object. This will be useful when creating, with a Python script, the transformation from TEI to RDF.<br>
+                        Below there is an example of the followed pattern:
+                    </p>
+                    <div class="bg-dark text-light p-3 rounded mb-3">
+                        <pre class="m-0"><code>&lt;person xml:id="dumas" sameAs="http://viaf.org/viaf/51688902" role="author"&gt;
+    &lt;persName xml:lang="fr"&gt;Alexandre Dumas&lt;/persName&gt;
+    &lt;birth&gt;1802-07-24&lt;/birth&gt;
+    &lt;death&gt;1870-12-05&lt;/death&gt;
+&lt;/person&gt;
+    ...
+&lt;relation name="dcterms:creator" active="#dumas" passive="#novel"&gt;</code></pre>
+                    </div>
+                    <a href="theCountOfMonteCristo.xml" target="_blank" title="See complete XML/TEI file" class="btn btn-outline-secondary btn-sm">XML/TEI file</a>
+                </div>
+
+                <div class="mb-5">
+                    <h3 class="h4 text-secondary">XML to HTML</h3>
+                    <p class="text-muted">The XML/TEI file created was then transformed into an HTML page using XSLT first, and a Python script later. The XSLT manages the style and how the elements of the XML file will be treated in HTML elements.
+                        A script in Python is necessary in order to actually do the transformation: using the <code>lxml</code> library the XML/TEI file and the XSLT file are considered and combined, so to create an HTML page automatically.<br>
+                        Below there are the links to view the XSLT file and the Python script on the GitHub repository of the project. Therefore, a link to the output HTML page is provided.</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://github.com/Angela-uni/ISCH/blob/main/xml-to-html.xslt" target="_blank" title="See the XSLT file on GitHub" class="btn btn-outline-secondary btn-sm">XSLT file</a>
+                        <a href="https://github.com/Angela-uni/ISCH/blob/main/python/xml_to_html.py" target="_blank" title="See the Python file on GitHub" class="btn btn-outline-secondary btn-sm">Python script (XML to HTML)</a>
+                        <a href="xml_to_html.html" target="_blank" title="See the output HTML" class="btn btn-primary btn-sm">Visit the output HTML page</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="h4 text-secondary">XML/TEI to RDF</h3>
+                    <p class="text-muted">
+                        As a final step, an RDF dataset was created. Once again, a Python script was used to transform the XML/TEI file (the source for the dataset itself) into RDF triples. In this case the format of the output file is Turtle (.ttl).
+                        The library used has been <code>rdflib</code>, crucial for generating the triples.<br>
+                        Beyond that, the visual representation of the Turtle file was done using the free web service <a href="https://www.ldf.fi/service/rdf-grapher" target="_blank" title="RDF Grapher">RDF Grapher</a>, which parses RDF data and visualizes it as a graph.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <a href="https://github.com/Angela-uni/ISCH/blob/main/python/xml_to_rdf.py" target="_blank" title="See the Python file on GitHub" class="btn btn-outline-secondary btn-sm">Python script (XML to RDF)</a>
+                        <a href="https://github.com/Angela-uni/ISCH/blob/main/output_rdf.ttl" target="_blank" title="See the output RDF on GitHub" class="btn btn-outline-secondary btn-sm">Turtle file</a>
+                    </div>
+                    <div class="d-flex justify-content-end mb-2">
+                        <div class="btn-group" role="group" aria-label="Graph zoom controls">
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="rdf-zoom-in" title="Zoom In">
+                                <i class="bi bi-zoom-in"></i> +
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="rdf-zoom-out" title="Zoom Out">
+                                <i class="bi bi-zoom-out"></i> -
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" id="rdf-zoom-reset" title="Reset View">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="border rounded bg-light overflow-hidden position-relative shadow-sm" style="width: 100%; height: 500px; cursor: grab;">
+                        <div id="rdf-panzoom-container" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <img id="rdf-png" src="imgs/rdf-grapher.png" style="max-width: 100%; max-height: 100%; object-fit: contain;" alt="RDF Graph" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion -->
+            <section class="mb-5 p-4 bg-white rounded shadow-sm">
+                <h2 class="border-bottom pb-2 mb-4 text-primary">Conclusion</h2>
+                <p class="text-muted">
+                    A Linked Open Data resource has been developed to show the user how it works and which technologies can be employed in accordance with international standards, by linking the selected entities.
+                    After defining the entity types and identifying their authoritative sources, the theoretical model revealed the connections between them.
+                    Thanks to the conceptual model, the relationships have been transformed into relationships between classes linked by properties, making use of existing ontologies from the web that are relevant to the domain.
+                    The entire final section on knowledge representation is necessary to explain how a text is annotated and transformed into a machine-readable language, using stylesheets to make it more readable.
+                    Finally, the data was structured in RDF format —one of the fundamental pillars of the Semantic Web— to express information through triples. An example of its application is the resulting knowledge graph, which a software or a search engine can navigate and interpret logically.
+                </p>
+            </section>
+
+            <!-- Technologies, Languages & References -->
+            <section class="p-4 bg-white rounded shadow-sm mb-5">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h5 class="text-primary border-bottom pb-2">Technologies</h5>
+                        <ul class="text-muted ps-3">
+                            <li><a href="https://www.yworks.com/products/yed" target="_blank" title="yEd Graph Editor">yEd Graph Editor</a>: implementation of the theoretical model and the conceptual model.</li>
+                            <li><a href="https://essepuntato.it/graffoo/" target="_blank" title="Graffoo">Graffoo</a>: palette for yEd Graph Editor implemented by Professor Silvio Peroni.</li>
+                            <li><a href="https://www.ldf.fi/service/rdf-grapher" target="_blank" title="RDF Grapher">RDF Grapher</a>: visualization of the Turtle file.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <h5 class="text-primary border-bottom pb-2">Languages</h5>
+                        <ul class="text-muted ps-3">
+                            <li><a href="https://html.spec.whatwg.org" target="_blank" title="HTML specification">HTML</a></li>
+                            <li><a href="https://www.w3.org/Style/CSS/current-work" target="_blank" title="CSS specification">CSS</a></li>
+                            <li><a href="https://tc39.es/ecma262/" target="_blank" title="JS specification">JavaScript</a></li>
+                            <li><a href="https://www.w3.org/TR/xml/" target="_blank" title="XML specification">XML</a></li>
+                            <li><a href="https://www.w3.org/TR/xslt-30/" target="_blank" title="XSLT specification">XSLT</a></li>
+                            <li><a href="https://docs.python.org/3/reference/index.html" target="_blank" title="Python specification">Python</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="text-primary border-bottom pb-2">References</h5>
+                        <ul class="text-muted ps-3">
+                            <li><a href="https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo" target="_blank" title="Wikipedia">Wikipedia page</a> of <i>The Count of Monte Cristo</i>: source for the project.</li>
+                            <li><a href="https://commons.wikimedia.org/wiki/File:COMC_V1_D289_The_Isle_of_Monte-Cristo.jpg" target="_blank" title="Wikimedia Commons">Wikimedia Commons item</a>: source page of the image used as favicon and background.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="bg-dark text-white text-center py-4 mt-5">
+            <div class="container">
+                <p class="small text-white-50 mb-2">MonteCristo is developed as final project for Information Science and Cultural Heritage exam, held by Professor Francesca Tomasi and Professor Marilena Daquino within the Master's Degree Programme in Digital Humanities and Digital Knowledge, A.Y. 2025-2026.</p>
+                <p class="small text-white-50 m-0">&copy; 2026 MonteCristo - <a href="https://github.com/Angela-uni" class="text-white text-decoration-underline">Angela Paganini</a> - Alma Mater Studiorum Università di Bologna. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
